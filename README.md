@@ -1,15 +1,15 @@
-# capstone
+# Capstone
 Final Capstone project
 
 ##Below are the instructions as they appear in the instructions.docx file found in the course documents.
 
-##**CAPSTONE PROJECT INSTRUCTIONS**
+## **CAPSTONE PROJECT INSTRUCTIONS**
 
 The capstone project assesses the program outcomes through a conclusion information system (IS) component that solves a business need.  Each phase of the project should include one Microsoft Word document that follows APA guidelines and one zip file containing the applicable programming code, development material, and/or system configuration.  
 
 *Instructions for the capstone project are detailed below in three (3) phases.*
 
-##**Phase I Capstone Requirements**
+## **Phase I Capstone Requirements**
 
 * General Outline
   * APA formatted paper
@@ -34,7 +34,7 @@ The capstone project assesses the program outcomes through a conclusion informat
   * Observe the user utilizing the new IS system and the tasks that the user should be able to complete using the new system. Take notes during testing.
   * Create an Excel spreadsheet to store the data collected during testing.
 
-##**Phase II Capstone Requirements**
+## **Phase II Capstone Requirements**
 
 * General Outline
   * APA formatted paper
@@ -57,7 +57,7 @@ The capstone project assesses the program outcomes through a conclusion informat
 * Deployment Plan and Report
   * Create a detailed deployment plan for your new IS using the concepts learned in the assigned chapter.
 
-##**Phase III Capstone Requirements**
+## **Phase III Capstone Requirements**
 
 * General Outline
   * APA formatted paper
