@@ -1,7 +1,7 @@
 # Capstone
 Final Capstone project
 
-##Below are the instructions as they appear in the instructions.docx file found in the course documents.
+## Below are the instructions as they appear in the instructions.docx file found in the course documents.
 
 ## **CAPSTONE PROJECT INSTRUCTIONS**
 
