@@ -1,7 +1,7 @@
 # Capstone
 Final Capstone project
 
-## Deliverables**
+## **Deliverables**
 * Inventory Managment System 
 * Optimal Stock window for items
 * Username and Password integration for security
