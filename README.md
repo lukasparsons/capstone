@@ -1,6 +1,13 @@
 # Capstone
 Final Capstone project
 
+## Deliverables **
+* Inventory Managment System 
+* Optimal Stock window for items
+* Username and Password integration for security
+* Logins for different stores with notifications?
+  * Some way to notify another store that stock is low, and they need to send a shipment.
+
 ## Below are the instructions as they appear in the instructions.docx file found in the course documents.
 
 ## **CAPSTONE PROJECT INSTRUCTIONS**
