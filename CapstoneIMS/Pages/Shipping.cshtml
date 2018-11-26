@@ -1,0 +1,78 @@
+﻿@page
+@model CapstoneIMS.Web.Pages.Shipping.IndexModel
+@{
+    ViewData["Title"] = "Shipping";
+}
+
+<h2>Shipping</h2>
+<div class="col-lg-6">
+    <h3>Create Shipment</h3>
+    <form>
+        <div class="form-group">
+            <input type="number" id="shippingSku" placeholder="Enter Item SKU" />
+        </div> 
+        <div class="form-group">
+            <input type="number" id="shippingQty" placeholder="How Many?" />
+        </div>
+        <div class="form-group">
+            <label for="origin">Shipping from:</label>
+            <select class="form-control" id="origin">
+                <option>Store A</option>
+                <option>Store B</option>
+                <option>Warehouse</option>
+            </select>
+            <small>WARING: Stock will be immediately deducted from Origin upon form submission.</small>
+        </div>
+        <div class="form-group">
+            <label for="destination">Shipping To:</label>
+            <select class="form-control" id="destination">
+                <option>Store A</option>
+                <option>Store B</option>
+                <option>Warehouse</option>
+            </select>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!--Example Inputs TODO: Replace with DB entries-->
+                <td>Pokemon Yellow Version</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Gameboy Color (Green)</td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-warning">Create Shipment</button>
+</div>
+<div class="col-lg-6">
+    <h3>Recieve Shipment</h3>
+    <form>
+    <div class="form-group">
+        <label for="recieveShipmentNum">Enter Shipping Number:</label>
+        <input type="number" id="recieveShipmentNum" />
+    </div>
+    <div class="form-group">
+        <label for="asDescribed">Shipment As Expected?</label>
+        <select class="form-control" id="asDescribed">
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="notes">Notes</label>
+        <textarea class="form-control" id="notes" rows="5" placeholder="Items were missing. Too many of certain item etc.."></textarea>
+    </div>
+    <div>
+        <button class="btn btn-success">Complete Recieving Shipment</button>
+    </div>
+    </form>
+</div>

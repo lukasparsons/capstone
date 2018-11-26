@@ -4,7 +4,7 @@
     ViewData["Title"] = "AddInventory";
 }
 
-<h2>Add Inventory</h2>
+<h2>New Item</h2>
 <p><a asp-page="Inventory">Back to Inventory</a></p>
 <div>
     <form>
@@ -20,11 +20,6 @@
             <label for="qty">How Many?</label>
             <input type="number" class="form-control" id="qty">
             <p class="help-block">Must be a positive number.</p>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input id="storecheckbox" type="checkbox"> Is transfer from another store?
-            </label>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
