@@ -1,0 +1,29 @@
+﻿@page
+@model CapstoneIMS.Web.Pages.InventoryModel
+@{
+    ViewData["Title"] = "Inventory";
+}
+
+<h2>Inventory</h2>
+<div class="col-xs-4"> 
+    <label for="location">Which Store?</label>
+    <select class="form-control" id="location">
+        <option>Store A</option>
+        <option>Store B</option>
+        <option>Warehouse</option>
+    </select>
+</div>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Item</th>
+                <th scope="col">SKU</th>
+                <th scope="col">InStock</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+
+    </table>
+</div>
+<a href="AddInventory" asp-for class="btn btn-xs btn-default">Add Inventory</a>

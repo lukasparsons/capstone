@@ -15,6 +15,10 @@ Inventory
     * SKUs
 
 
-Form Where stock is added to a store. 
-Notification to send stock from one store to another store or the warehouse. 
-Login Section.
+View List of stores
+Information about Managers store
+On homepage as well show any notifications to ship
+Login Section
+Form Where stock is added to a store
+Notification to send stock from one store to another store or the warehouse
+

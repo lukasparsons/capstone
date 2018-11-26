@@ -1,0 +1,31 @@
+﻿@page
+@model CapstoneIMS.Web.Pages.AddInventoryModel
+@{
+    ViewData["Title"] = "AddInventory";
+}
+
+<h2>Add Inventory</h2>
+<p><a asp-page="Inventory">Back to Inventory</a></p>
+<div>
+    <form>
+        <div class="form-group">
+            <label for="itemName">Item Name</label>
+            <input type="search" class="form-control" id="itemName" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="sku">SKU</label>
+            <input type="number" class="form-control" id="sku" placeholder="SKU">
+        </div>
+        <div class="form-group">
+            <label for="qty">How Many?</label>
+            <input type="number" class="form-control" id="qty">
+            <p class="help-block">Must be a positive number.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input id="storecheckbox" type="checkbox"> Is transfer from another store?
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

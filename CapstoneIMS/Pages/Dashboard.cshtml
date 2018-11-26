@@ -1,0 +1,92 @@
+﻿@page
+@model CapstoneIMS.Pages.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<div class="row">
+
+    <div>
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Pending Tasks?</th>
+                </tr>
+            </thead>
+            <tr>
+                <td><a href="TODO Send to StoreA Info">Store A</a></td>
+                <td>333 Test Lane, Stokesdale, NC</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><a href="TODO Send to StoreB Info">Store B</a></td>
+                <td>6410 Test Drive, Kernersville, NC</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td><a href="Todo send to Warehouse Info">Warehouse</a></td>
+                <td>123 Test Circle, Greensboro, NC</td>
+                <td>No</td>
+            </tr>
+        </table>
+    </div>
+    <form>
+        <div class="col-xs-6">
+            <h3>Inventory Audit</h3>
+            <div class="form-group">
+                <label for="storeBeingAudited">Select store to change stock</label>
+                <select class="form-control" id="storeBeingAudited">
+                    <option>Store A</option>
+                    <option>Store B</option>
+                    <option>Warehouse</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="auditedFrom">Audited From?</label>
+                <select class="form-control" id="auditedFrom">
+                    <option>none</option>
+                    <option>Store A</option>
+                    <option>Store B</option>
+                    <option>Warehouse</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="SKU">SKU</label>
+                    <input type="number" class="form-control" id="SKU" placeholder="SKU">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Quantity</label>
+                    <input type="number" class="form-control" id="quantity" placeholder="Quantity">
+                </div>
+            </div>
+            <button type="button" class="btn btn-warning">Submit Audit</button>
+        </div>
+
+    </form>
+    <div class="col-xs-6">
+        <h3>Notifications</h3>
+        <table class="table table-condensed table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Message</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Store A Stock of SKU: 184330 is below OSW</td>
+                <td>Create shipment and send QTY 5 of 184330 from warehouse to Store A.</td>
+            </tr>
+            <tr>
+                <td>Send excess stock to Warehouse</td>
+                <td>Your store has too many of SKU 193221. Plesae end QTY 11 to Warehouse.</td>
+            </tr>
+        </table>
+    </div>
+    </div>
+
+

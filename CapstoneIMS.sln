@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneIMS", "CapstoneIMS\CapstoneIMS.csproj", "{4FF9D167-5BAC-406A-BE10-92248CD30303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneIMS.Web", "CapstoneIMS\CapstoneIMS.Web.csproj", "{4FF9D167-5BAC-406A-BE10-92248CD30303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneIMS.Domain", "CapstoneIMS.Domain\CapstoneIMS.Domain.csproj", "{0F9A83B1-E56D-4452-A661-C40635ECC134}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneIMS.Domain", "CapstoneIMS.Domain\CapstoneIMS.Domain.csproj", "{0F9A83B1-E56D-4452-A661-C40635ECC134}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneIMS.Data", "CapstoneIMS.Data\CapstoneIMS.Data.csproj", "{AB1B1D31-2092-482D-BFE7-2006CACEFCCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneIMS.Data", "CapstoneIMS.Data\CapstoneIMS.Data.csproj", "{AB1B1D31-2092-482D-BFE7-2006CACEFCCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapstoneIMS.Membership", "CapstoneIMS.Membership\CapstoneIMS.Membership.csproj", "{4D7DEEFF-35F6-47AC-8218-C4702D9B3140}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneIMS.Membership", "CapstoneIMS.Membership\CapstoneIMS.Membership.csproj", "{4D7DEEFF-35F6-47AC-8218-C4702D9B3140}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
