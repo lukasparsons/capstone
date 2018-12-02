@@ -23,7 +23,14 @@
                 <th scope="col"></th>
             </tr>
         </thead>
-
+        <tbody>
+            <tr>
+                @foreach (var product in Model.list)
+                {
+                    <th>@Model.</th>
+                }
+            </tr>
+        </tbody>
     </table>
 </div>
-<a href="AddInventory" asp-for class="btn btn-xs btn-default">Create New Item</a>
+<a asp-page="AddInventory" asp-for class="btn btn-xs btn-default">Create New Item</a>

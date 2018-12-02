@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CapstoneIMS.Domain
 {
@@ -7,13 +9,13 @@ namespace CapstoneIMS.Domain
     {
         public Store()
         {
-            Inventory = new Dictionary<int, int>();
+            Inventory = new Dictionary<ObjectId, int>();
             ProductCatalog = new List<Product>();
         }
 
         public int Id { get; set; }
         public Address Address { get; set; }
-        public Dictionary<int, int> Inventory { get; private set; }
+        public Dictionary<ObjectId, int> Inventory { get; private set; }
         public ICollection<Product> ProductCatalog { get; private set; }
 
         public void PrintStoreInfo()
@@ -44,20 +46,20 @@ namespace CapstoneIMS.Domain
             Inventory[product.Id]--;
         }
 
-        public Product GetProduct(int id)
+        public Product GetProduct(ObjectId id)
         {
             return ProductCatalog.FirstOrDefault(pr => pr.Id == id);
         }
 
-        public bool GetIdGreaterThan10(IPerson person) => person.Id > 10;
+        //public bool GetIdGreaterThan10(IPerson person) => person.Id > 10;
 
-        public void PrintWorkers()
-        {
-            foreach (var worker in Workers)
-            {
-                Console.WriteLine(worker.FullName);
-            }
+        //public void PrintWorkers()
+        //{
+        //    foreach (var worker in Workers)
+        //    {
+        //        Console.WriteLine(worker.FullName);
+        //    }
 
-        }
+        //}
     }
 }

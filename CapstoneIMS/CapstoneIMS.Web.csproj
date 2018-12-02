@@ -11,4 +11,10 @@
     <PackageReference Include="MongoDB.Driver" Version="2.7.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CapstoneIMS.Data\CapstoneIMS.Data.csproj" />
+    <ProjectReference Include="..\CapstoneIMS.Domain\CapstoneIMS.Domain.csproj" />
+    <ProjectReference Include="..\CapstoneIMS.Membership\CapstoneIMS.Membership.csproj" />
+  </ItemGroup>
+
 </Project>
