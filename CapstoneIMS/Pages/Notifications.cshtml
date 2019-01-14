@@ -4,21 +4,29 @@
     ViewData["Title"] = "Notifications";
 }
 
-<h2>Notifications</h2>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Subject</th>
-            <th>Message</th>
-        </tr>
-    </thead>
-    <tr>
-        <th>Store A Stock of SKU: 184330 is below OSW</th>
-        <th>Create shipment and send QTY 5 of 184330 from warehouse to Store A.</th>
-    </tr>
-    <tr>
-        <th>Send excess stock to Warehouse</th>
-        <th>Your store has too many of SKU 193221. Please send QTY 11 to Warehouse.</th>
-    </tr>
+<div class="row">
+    <h2>Notifications</h2>
+</div>
+<div class="row" style="height: 500px; overflow:auto;">
+    <form method="post">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Delete?</th>
+                </tr>
+            </thead>
+            @foreach (var notification in Model.Notifications)
+            {
 
-</table>
+                <tr>
+                    <th>@notification.Subject</th>
+                    <th>@notification.Message</th>
+                    <th><button class="btn btn-danger" formmethod="post" asp-page-handler="Delete" type="submit" asp-route-idString="@notification.Id">Delete</button></th>
+                </tr>
+            }
+
+        </table>
+    </form>
+</div>

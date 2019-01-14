@@ -4,33 +4,50 @@
     ViewData["Title"] = "Inventory";
 }
 
-<h2>Inventory</h2>
-<div class="col-xs-4"> 
-    <label for="location">Which Store?</label>
-    <select class="form-control" id="location">
-        <option>Store A</option>
-        <option>Store B</option>
-        <option>Warehouse</option>
-    </select>
-</div>
+<h2>Inventory Catalog</h2>
 <div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Item</th>
-                <th scope="col">SKU</th>
-                <th scope="col">InStock</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                @foreach (var product in Model.list)
-                {
-                    <th>@Model.</th>
-                }
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <div class="row" style="height:500px; overflow:auto;">
+            <div class="col-md-12">
+                <form method="post" autocomplete="off">
+                    <table class="table table-hover table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col">Object ID</th>
+                                <th scope="col">MSRP</th>
+                                <th scope="col">Type</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.productList)
+                            {
+                                <tr>
+
+                                    <th>@product.ProductName</th>
+                                    <th>@product.Id</th>
+                                    <th>@String.Format("{0:c}", product.DefaultPrice)</th>
+                                    <th>@product.ProductType</th>
+                                    <th>
+                                        <button class="btn btn-danger btn-sm" type="submit" asp-route-id="@product.Id"
+                                                asp-page-handler="DeleteItem">
+                                            Delete Item
+                                        </button>
+                                    </th>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a asp-page="AddInventory" asp-for class="btn btn-xs btn-default">Create New Item</a>
+            </div>
+        </div>
+    </div>
 </div>
-<a asp-page="AddInventory" asp-for class="btn btn-xs btn-default">Create New Item</a>

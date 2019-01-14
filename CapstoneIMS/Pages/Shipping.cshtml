@@ -1,78 +1,136 @@
 ﻿@page
-@model CapstoneIMS.Web.Pages.Shipping.IndexModel
+@model CapstoneIMS.Pages.ShippingModel
 @{
     ViewData["Title"] = "Shipping";
 }
 
 <h2>Shipping & Receiving</h2>
-<div class="col-lg-6">
-    <h3>Create Shipment</h3>
-    <form>
-        <div class="form-group">
-            <input type="number" id="shippingSku" placeholder="Enter Item SKU" />
-        </div> 
-        <div class="form-group">
-            <input type="number" id="shippingQty" placeholder="How Many?" />
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-5">
+            <div class="row text-center">
+                <h3>Create Shipment</h3>
+            </div>
+            <div class="row">
+                <form method="post" autocomplete="off">
+                    <div class="col-md-12">
+                        <div class="row form-group">
+                            <label for="shippingID">Enter Shipment ID if applicable:</label>
+                            <input class="form-control" type="text" id="shippingID" name="shippingID" />
+                        </div>
+                        <div class="row form-group">
+                            <label for="shippingku">Enter an Item ID:</label>
+                            <input class="form-control" type="text" id="shippingSku" name="itemID" />
+                        </div>
+                        <div class="row form-group">
+                            <label for="shippingQty">Quantity:</label>
+                            <input type="number" id="shippingQty" class="form-control" name="quantity" />
+                        </div>
+                        <div class="row form-group">
+                            <label for="origin">Shipping from:</label>
+                            <select class="form-control" id="origin" name="FromLocation">
+                                @foreach (var location in Model.Locations)
+                                {
+                                    <option>@location.StoreName</option>
+                                }
+                            </select>
+                            <small>WARING: Stock will be immediately deducted from Origin upon form submission.</small>
+                        </div>
+                        <div class="row form-group">
+                            <label for="destination">Shipping To:</label>
+                            <select class="form-control" id="destination" name="ToLocation">
+                                @foreach (var location in Model.Locations)
+                                {
+                                    <option>@location.StoreName</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="row">
+                            <button class="form-control btn btn-default" type="submit" asp-page-handler="AddToManifest">Add To Manifest</button>
+                            @if (TempData[ShippingModel.Message] is string message)
+                            {
+                                <p><font color="green">@message</font></p>
+                            }
+                            @if (TempData[ShippingModel.Error] is string error)
+                            {
+                                <p><font color="red">@error</font></p>
+                            }
+                        </div>
+                        <br />
+                        <div class="row form-group">
+                            <input type="text" name="shipmentId2" placeholder="Shipping ID to Ship" class="form-control" />
+                        </div>
+                        <div class="row">
+                            <button class="form-control btn btn-success" asp-page-handler="CreateShipment">Ship It!</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="origin">Shipping from:</label>
-            <select class="form-control" id="origin">
-                <option>Store A</option>
-                <option>Store B</option>
-                <option>Warehouse</option>
-            </select>
-            <small>WARING: Stock will be immediately deducted from Origin upon form submission.</small>
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+            <div class="row text-center">
+                <h3>Receive Shipment</h3>
+            </div>
+            <div class="row">
+                <form method="post">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="receiveShipmentID">Enter Shipment ID:</label>
+                            <input class="form-control" type="text" id="receiveShipmentID" name="shipmentID" placeholder="Shipment#" />
+                        </div>
+                        <div class="form-group">
+                            <label for="asDescribed">Shipment As Expected?</label>
+                            <select class="form-control" id="asDescribed" name="asExpected">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea class="form-control" id="notes" name="notes" rows="5" placeholder="Items were missing. Too many of certain item etc.."></textarea>
+                        </div>
+                        <div>
+                            <button class="form-control btn btn-success" type="submit" asp-page-handler="ReceiveShipment">Complete Recieving Shipment</button>
+                            @if (TempData[ShippingModel.MessageReceiving] is string message2)
+                            {
+                                <p><font color="green">@message2</font></p>
+                            }
+                            @if (TempData[ShippingModel.ErrorReceiving] is string error2)
+                            {
+                                <p><font color="red">@error2</font></p>
+                            }
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="destination">Shipping To:</label>
-            <select class="form-control" id="destination">
-                <option>Store A</option>
-                <option>Store B</option>
-                <option>Warehouse</option>
-            </select>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <table class="table table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th>Shipment ID</th>
+                        <th>Total Items</th>
+                        <th>Date Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @* Todo: Show more useful Information on this table, subtract stock from stores on form submit,
+                    and add to new location on "complete receiving shipment" button press *@
+                    @foreach (var shipment in Model.Shipments)
+                    {
+                        <tr>
+                            <th>@shipment.Id</th>
+                            <th><a href="/ManifestInfo/@shipment.Id" target="_blank">Shipment Info</a></th>
+                            <th>@shipment.DateTime</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <!--Example Inputs TODO: Replace with DB entries-->
-                <td>Pokemon Yellow Version</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>Gameboy Color (Green)</td>
-                <td>7</td>
-            </tr>
-        </tbody>
-    </table>
-    <button class="btn btn-success">Create Shipment</button>
-    </form>
-</div>
-<div class="col-lg-6">
-    <h3>Receive Shipment</h3>
-    <form>
-    <div class="form-group">
-        <label for="recieveShipmentNum">Enter Shipping Number:</label>
-        <input type="number" id="recieveShipmentNum" />
     </div>
-    <div class="form-group">
-        <label for="asDescribed">Shipment As Expected?</label>
-        <select class="form-control" id="asDescribed">
-            <option>Yes</option>
-            <option>No</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="notes">Notes</label>
-        <textarea class="form-control" id="notes" rows="5" placeholder="Items were missing. Too many of certain item etc.."></textarea>
-    </div>
-    <div>
-        <button class="btn btn-success">Complete Recieving Shipment</button>
-    </div>
-    </form>
 </div>

@@ -6,8 +6,10 @@ using System.Text;
 
 namespace CapstoneIMS.Domain
 {
+    [BsonIgnoreExtraElements]
     public class Product
     {
+        
         [BsonId]
         public ObjectId Id { get; set; }
         [BsonElement("SKU")]
@@ -16,7 +18,7 @@ namespace CapstoneIMS.Domain
         public string ProductName { get; set; }
         [BsonElement("ProductType")]
         public string ProductType { get; set; }
-        [BsonElement("DefualtPrice")]
+        [BsonElement("DefaultPrice")]
         public decimal DefaultPrice { get; set; }
 
     }

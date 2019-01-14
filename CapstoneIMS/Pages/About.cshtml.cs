@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CapstoneIMS.Domain;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CapstoneIMS.Pages
 {
     public class AboutModel : PageModel
     {
-        public string Message { get; set; }
+        private readonly MongoDBContext dbContext;
 
-        public void OnGet()
+        public AboutModel()
         {
-            Message = "Your application description page.";
+            dbContext = new MongoDBContext();
+
+        }
+
+        public async Task OnPostAsync()
+        {
+
+            var doc = new User
+            {
+                Email = Request.Form["email"],
+                FirstName = Request.Form["firstName"],
+                LastName = Request.Form["lastName"],
+                Password = Request.Form["password"]
+            };
+
+            await dbContext.Users.InsertOneAsync(doc);
+            Response.Redirect("Dashboard");
         }
     }
 }

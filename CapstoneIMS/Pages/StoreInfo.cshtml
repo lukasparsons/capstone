@@ -1,0 +1,105 @@
+﻿@page "{id}"
+@model CapstoneIMS.Pages.StoreInfoModel
+@{
+    ViewData["Title"] = "Store Info";
+}
+
+<h2>@Model.Location.StoreName Info</h2>
+<p>@Model.Location.Address</p>
+
+<div class="container-fluid">
+    @if (TempData[StoreInfoModel.Feedback] is string message)
+    {
+        <div class="row">
+            <div class="alert alert-warning" role="alert">
+                @message
+            </div>
+        </div>
+    }
+    @if (TempData[StoreInfoModel.Success] is string success)
+    {
+        <div class="row">
+            <div class="alert alert-success" role="alert">
+                @success
+            </div>
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-responsive table-hover">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>MSRP</th>
+                                <th>Quantity</th>
+                                <th>Total Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.StoreInventory)
+                            {
+                                <tr>
+                                    <td>@product.ProductName</td>
+                                    <td>@product.Id</td>
+                                    <td>@String.Format("{0:C}", product.DefaultPrice)</td>
+                                    <td>@product.Quantity</td>
+                                    <td>@String.Format("{0:C}", product.DefaultPrice * product.Quantity)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="post" autocomplete="off">
+                        <h4>Adjust Inventory</h4>
+                        <div class="form-group">
+                            <label for="itemID">Item ID:</label>
+                            <input type="text" class="form-control" value="@Model.itemIDString" name="itemID" id="itemID" />
+                        </div>
+                        <div class="form-group">
+                            <label for="itemName">Item Name:</label>
+                            <input type="text" class="form-control" name="itemName" id="itemName" placeholder="*Must be typed exactly as it is in the system." /><br />
+                        </div>
+                        <div class="form-group">
+                            <label for="Quantity">Quantity:</label>
+                            <input type="number" class="form-control" name="Quantity" id="Quantity" placeholder="Input negative number to remove from inventory." />
+                            <br />
+                        </div>
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <form method="post">
+            <div class="col-md-5">
+                <table class="table table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>ID</th>
+                            @*<th>Copy ID to Clipboard</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model.Products)
+                        {
+                            <tr>
+                                <td>@product.ProductName</td>
+                                <td>@product.Id</td>
+                                @*<td><button class="btn btn-sm" type="submit" asp-page-handler="ItemID" asp-fragment="@product.Id">Select</button></td>*@
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>

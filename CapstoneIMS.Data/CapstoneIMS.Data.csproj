@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CapstoneIMS.Domain\CapstoneIMS.Domain.csproj" />
-    <ProjectReference Include="..\CapstoneIMS.Membership\CapstoneIMS.Membership.csproj" />
   </ItemGroup>
 
 </Project>

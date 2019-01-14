@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using CapstoneIMS.Domain;
+using CapstoneIMS.Web.Pages;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -14,8 +15,10 @@ namespace CapstoneIMS
 {
     public class Program
     {
+        
         public static void Main(string[] args)
-        { 
+        {
+            
             CreateWebHostBuilder(args).Build().Run();
         }
 

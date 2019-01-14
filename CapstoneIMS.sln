@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneIMS.Domain", "Capst
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneIMS.Data", "CapstoneIMS.Data\CapstoneIMS.Data.csproj", "{AB1B1D31-2092-482D-BFE7-2006CACEFCCD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapstoneIMS.Membership", "CapstoneIMS.Membership\CapstoneIMS.Membership.csproj", "{4D7DEEFF-35F6-47AC-8218-C4702D9B3140}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{AB1B1D31-2092-482D-BFE7-2006CACEFCCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB1B1D31-2092-482D-BFE7-2006CACEFCCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB1B1D31-2092-482D-BFE7-2006CACEFCCD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D7DEEFF-35F6-47AC-8218-C4702D9B3140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D7DEEFF-35F6-47AC-8218-C4702D9B3140}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D7DEEFF-35F6-47AC-8218-C4702D9B3140}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D7DEEFF-35F6-47AC-8218-C4702D9B3140}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

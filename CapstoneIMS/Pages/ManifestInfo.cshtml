@@ -1,0 +1,59 @@
+﻿@page "{id}"
+@model CapstoneIMS.Web.Pages.ManifestInfoModel
+@{
+    ViewData["Title"] = "ManifestInfo";
+}
+
+<h2>ManifestInfo</h2>
+<p><a href="/Shipping/">Return to Shipping & Receiving</a></p>
+
+<div class="col-centered col-md-12">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date Created</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Shipped?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>@Model.Shipment.Id</th> 
+                <th>@Model.Shipment.DateTime</th>
+                <th>@Model.Shipment.FromLocation</th>
+                <th>@Model.Shipment.ToLocation</th>
+                @if (Model.Shipment.IsShipped == true)
+                {
+                    <th>Yes</th>
+                }
+                @if (Model.Shipment.IsShipped == false)
+                {
+                    <th>No</th>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-centered col-md-12">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Product Name</th>
+                <th>Quantity in shipment</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.ItemList)
+            {
+                <tr>
+                    <td>@item.ProductID</td>
+                    <td>@Model.Products.Where(m => m.Id == item.ProductID).Single().ProductName</td>
+                    <td>@item.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

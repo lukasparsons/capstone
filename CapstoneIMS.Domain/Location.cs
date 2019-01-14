@@ -6,6 +6,7 @@ using System.Text;
 
 namespace CapstoneIMS.Domain
 {
+    [BsonIgnoreExtraElements]
     public class Location
     {
         [BsonId]
@@ -16,7 +17,10 @@ namespace CapstoneIMS.Domain
         public string StoreName { get; set; }
         [BsonElement("Address")]
         public Address Address { get; set; }
+        [BsonElement("Type")]
+        public string LocationType { get; set; }
         [BsonElement("Inventory")]
-        public IDictionary<ObjectId, int> Inventory { get; set; }
+        public List<Inventory> Inventory { get; set; }
+        
     }
 }
