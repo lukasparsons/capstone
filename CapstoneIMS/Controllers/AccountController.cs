@@ -11,7 +11,7 @@ namespace CapstoneIMS.Web.Controllers
     [Route("[controller]/[action]")]
     public class AccountController : Controller
     {
-        [HttpPost]
+        //[HttpPost]
         public async Task<IActionResult> SignOut()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

@@ -2,7 +2,44 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>b3b9499c-4fc9-4268-9625-e988110d5952</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="CapstoneIMS.Web.deps.json" />
+    <Content Remove="CapstoneIMS.Web.runtimeconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="CapstoneIMS.Data.dll" />
+    <None Remove="CapstoneIMS.Data.pdb" />
+    <None Remove="CapstoneIMS.Domain.dll" />
+    <None Remove="CapstoneIMS.Domain.pdb" />
+    <None Remove="CapstoneIMS.Web.dll" />
+    <None Remove="CapstoneIMS.Web.pdb" />
+    <None Remove="CapstoneIMS.Web.Views.dll" />
+    <None Remove="CapstoneIMS.Web.Views.pdb" />
+    <None Remove="DnsClient.dll" />
+    <None Remove="dotnet-aspnet-codegenerator-design.dll" />
+    <None Remove="Microsoft.CodeAnalysis.CSharp.Workspaces.dll" />
+    <None Remove="Microsoft.CodeAnalysis.Workspaces.dll" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Core.dll" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.dll" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll" />
+    <None Remove="Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll" />
+    <None Remove="MongoDB.Bson.dll" />
+    <None Remove="MongoDB.Driver.Core.dll" />
+    <None Remove="MongoDB.Driver.dll" />
+    <None Remove="NuGet.Frameworks.dll" />
+    <None Remove="System.Composition.AttributedModel.dll" />
+    <None Remove="System.Composition.Convention.dll" />
+    <None Remove="System.Composition.Hosting.dll" />
+    <None Remove="System.Composition.Runtime.dll" />
+    <None Remove="System.Composition.TypedParts.dll" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

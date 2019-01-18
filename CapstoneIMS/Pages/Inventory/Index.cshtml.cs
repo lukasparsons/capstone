@@ -42,6 +42,7 @@ namespace CapstoneIMS.Web.Pages
                     dbContext.Locations.ReplaceOne(locationfilter, loc);
                 }
             }
+            RedirectToPage();
         }
     }
 }

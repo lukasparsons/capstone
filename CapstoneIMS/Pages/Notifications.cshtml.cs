@@ -37,6 +37,7 @@ namespace CapstoneIMS.Web.Pages
             var id = ObjectId.Parse(idString);
             var filter = Builders<Notification>.Filter.Eq("_id", id);
             dBContext.Notifications.DeleteOne(filter);
+            OnGet();
             RedirectToPage();
         }
 
